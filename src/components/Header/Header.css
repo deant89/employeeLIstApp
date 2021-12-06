@@ -1,0 +1,16 @@
+
+.Header {
+  background-color: #33275E;
+  min-height: 100px;
+  justify-content: center;
+  display: block;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: center;
+}
+
+.Header .Header_logo {
+  pointer-events: none;
+  margin: 15px 0 0 0;
+}
+
