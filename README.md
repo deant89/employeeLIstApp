@@ -11,13 +11,13 @@ In the project directory, you can run:
 Runs the package.json to install script to get all the requird node_modules.
 ### `yarn start`
 
-Runs the employee list app in development mode.\
+Runs the employee list app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `yarn test`
 
-Launches the test suite.\
+Launches the test suite.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
