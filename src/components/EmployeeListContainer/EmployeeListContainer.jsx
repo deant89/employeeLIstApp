@@ -1,20 +1,14 @@
-import { useState, useEffect } from 'react';
-import { fetchData } from '../../helpers/fetch';
-import generalHelpers from '../../helpers/generalHelpers';
+import { useState, useEffect } from "react";
+import { fetchData } from "../../helpers/fetch";
+import generalHelpers from "../../helpers/generalHelpers";
 
-import './EmployeeListContainer.css';
+import "./EmployeeListContainer.css";
 
-import Search from '../Search';
-import List from '../List';
-import Pagination from '../Pagination';
+import Search from "../Search";
+import List from "../List";
+import Pagination from "../Pagination";
 
-const options =[
-  "Name",
-  "Location",
-  "Email",
-  "DOB",
-  "Gender"
-];
+const options = ["Name", "Location", "Email", "DOB", "Gender"];
 
 function EmployeeListContainer() {
   const [loading, setLoading] = useState(false);
@@ -31,27 +25,38 @@ function EmployeeListContainer() {
   const itemsPerPage = 10;
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     async function getData() {
-      const data = await fetchData("https://randomuser.me/api/?results=20");
+      const data = await fetchData("https://randomuser.me/api/?results=1000");
       setPeople(data.results);
       //setCurrentItems(data.results)
-      setCurrentItems(generalHelpers.calculatePaginatedItems(data.results, currentPage, itemsPerPage)); 
-      setPageNumbers(generalHelpers.setPaginationNumbers(data.results, itemsPerPage));
-      setLoading(false)
+      setCurrentItems(
+        generalHelpers.calculatePaginatedItems(
+          data.results,
+          currentPage,
+          itemsPerPage
+        )
+      );
+      setPageNumbers(
+        generalHelpers.setPaginationNumbers(data.results, itemsPerPage)
+      );
+      setLoading(false);
     }
     getData();
     setFilterOptions(options);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-      <div className="EmployeeListContainer">
-        <h2 className="EmployeeListContainer_title text-center">Employee List</h2>
+    <div className="EmployeeListContainer">
+      <h2 className="EmployeeListContainer_title text-center">Employee List</h2>
 
-        {loading ? <div className="text-center"><h4>Loading...</h4></div> : 
+      {loading ? (
+        <div className="text-center">
+          <h4>Loading...</h4>
+        </div>
+      ) : (
         <div>
-
           <Search
             people={people}
             currentPage={currentPage}
@@ -65,8 +70,12 @@ function EmployeeListContainer() {
             setFilterType={setFilterType}
             setSearchTerm={setSearchTerm}
           />
-          
-          <List filterOptions={filterOptions} filterType={filterType} currentItems={currentItems} />
+
+          <List
+            filterOptions={filterOptions}
+            filterType={filterType}
+            currentItems={currentItems}
+          />
 
           <Pagination
             people={people}
@@ -84,8 +93,9 @@ function EmployeeListContainer() {
             setUpperPageBound={setUpperPageBound}
             setLowerPageBound={setLowerPageBound}
           />
-         </div>}
-      </div>
+        </div>
+      )}
+    </div>
   );
 }
 
