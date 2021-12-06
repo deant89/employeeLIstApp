@@ -3,9 +3,6 @@ import Modal from "../Modal";
 import generalHelpers from "../../helpers/generalHelpers";
 
 function List({ filterOptions, filterType, currentItems }) {
-  console.log(filterOptions);
-  console.log(currentItems);
-  console.log(filterType);
   const tableColumns = filterOptions.map((name, i) => {
     return (
       <th key={i} scope="col">

@@ -12,7 +12,7 @@ const ModalDialog = (props) => {
   return (
     <div
       className={`modal fade" ${!props.openModal ? "hide" : "show"}`}
-      tabindex="-1"
+      tabIndex="-1"
       role="dialog"
       style={{ display: "block" }}
     >
@@ -36,32 +36,36 @@ const ModalDialog = (props) => {
               <div className="col-md-9">
                 <form>
                   <div className="form-group">
-                    <label for="exampleFormControlFile1">Address</label>
+                    <label>Address</label>
                     <input
+                      readOnly
                       type="input"
                       className="form-control"
                       value={`${props.data.location.street.number}  ${props.data.location.street.name}`}
                     />
                   </div>
                   <div className="form-group">
-                    <label for="exampleFormControlFile1">Email</label>
+                    <label>Email</label>
                     <input
+                      readOnly
                       type="input"
                       className="form-control"
                       value={`${props.data.email}`}
                     />
                   </div>
                   <div className="form-group">
-                    <label for="exampleFormControlFile1">Location</label>
+                    <label>Location</label>
                     <input
+                      readOnly
                       type="input"
                       className="form-control"
                       value={`${props.data.location.city}`}
                     />
                   </div>
                   <div className="form-group">
-                    <label for="exampleFormControlFile1">Date of Birth</label>
+                    <label>Date of Birth</label>
                     <input
+                      readOnly
                       type="input"
                       className="form-control"
                       value={`${props.dob}`}
