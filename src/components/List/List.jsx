@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "../Modal";
 import PropTypes from "prop-types";
 import generalHelpers from "../../helpers/generalHelpers";
+
 function List({ filterOptions, currentItems }) {
   const tableColumns = filterOptions.map((name, i) => {
     return (

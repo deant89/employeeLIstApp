@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import generalHelpers from "../../helpers/generalHelpers";
+
 function Pagination({
   people,
   currentPage,
