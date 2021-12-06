@@ -1,5 +1,5 @@
+import PropTypes from "prop-types";
 import generalHelpers from "../../helpers/generalHelpers";
-
 function Pagination({
   people,
   currentPage,
@@ -202,5 +202,24 @@ function Pagination({
     </div>
   );
 }
+
+Pagination.propTypes = {
+  filterOptions: PropTypes.array,
+  currentItems: PropTypes.array,
+  people: PropTypes.array,
+  currentPage: PropTypes.number,
+  upperPageBound: PropTypes.number,
+  lowerPageBound: PropTypes.number,
+  pageBound: PropTypes.number,
+  itemsPerPage: PropTypes.number,
+  pageNumbers: PropTypes.array,
+  filterType: PropTypes.string,
+  searchTerm: PropTypes.string,
+  setCurrentPage: PropTypes.func,
+  setCurrentItems: PropTypes.func,
+  setPageNumbers: PropTypes.func,
+  setLowerPageBound: PropTypes.func,
+  setUpperPageBound: PropTypes.func
+};
 
 export default Pagination;

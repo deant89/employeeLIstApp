@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "../Modal";
+import PropTypes from "prop-types";
 import generalHelpers from "../../helpers/generalHelpers";
-
-function List({ filterOptions, filterType, currentItems }) {
+function List({ filterOptions, currentItems }) {
   const tableColumns = filterOptions.map((name, i) => {
     return (
       <th key={i} scope="col">
@@ -45,5 +45,10 @@ function List({ filterOptions, filterType, currentItems }) {
     </div>
   );
 }
+
+List.propTypes = {
+  filterOptions: PropTypes.array,
+  currentItems: PropTypes.array
+};
 
 export default List;

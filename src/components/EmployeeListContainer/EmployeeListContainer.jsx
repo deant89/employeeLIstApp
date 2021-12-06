@@ -15,7 +15,7 @@ function EmployeeListContainer() {
   const [people, setPeople] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState([]);
-  const [searchTerm, setSearchTerm] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState("name");
   const [filterOptions, setFilterOptions] = useState([]);
   const [pageNumbers, setPageNumbers] = useState([]);

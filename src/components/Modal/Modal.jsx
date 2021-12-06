@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 import "./Modal.css";
 
 const Backdrop = (props) => {
@@ -125,6 +126,11 @@ function Modal(props) {
         : null}
     </React.Fragment>
   );
-}
+};
+
+Modal.propTypes = {
+    data: PropTypes.object,
+    dob: PropTypes.string
+};
 
 export default Modal;

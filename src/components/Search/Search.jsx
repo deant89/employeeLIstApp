@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import generalHelpers from "../../helpers/generalHelpers";
 import "./Search.css";
 
@@ -89,5 +90,20 @@ function Search({
     </div>
   );
 }
+
+Search.propTypes = {
+  filterOptions: PropTypes.array,
+  currentItems: PropTypes.array,
+  people: PropTypes.array,
+  currentPage: PropTypes.number,
+  itemsPerPage: PropTypes.number,
+  filterType: PropTypes.string,
+  searchTerm: PropTypes.string,
+  setCurrentPage: PropTypes.func,
+  setCurrentItems: PropTypes.func,
+  setPageNumbers: PropTypes.func,
+  setSearchTerm: PropTypes.func,
+  setFilterType: PropTypes.func
+};
 
 export default Search;
